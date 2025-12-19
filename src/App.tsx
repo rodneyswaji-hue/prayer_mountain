@@ -105,19 +105,110 @@ export default function App() {
       </section>
 
       {/* VISION */}
-      <section id="vision" className="py-24 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <h3 className="text-3xl font-bold text-center mb-12">Our Vision & Development Plan</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {["Prayer Cells", "Accommodation", "Water & Security", "Cultural Center", "Community Programs", "Refreshment Area"].map((item) => (
-              <div key={item} className="bg-white p-6 rounded-2xl shadow">
-                <h4 className="font-semibold text-lg mb-2">{item}</h4>
-                <p className="text-sm">Funds will support the construction and maintenance of {item.toLowerCase()}, ensuring safety, comfort, and sustainability.</p>
-              </div>
-            ))}
-          </div>
+{/* VISION */}
+<section id="vision" className="py-24 bg-gray-50">
+  <div className="max-w-6xl mx-auto px-6">
+    <h3 className="text-3xl font-bold text-center mb-4">Our Vision & Development Plan</h3>
+    <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+      We're transforming this sacred mountain into a comprehensive spiritual sanctuary. 
+      Each component serves a unique purpose in creating a space for prayer, community, and cultural preservation.
+    </p>
+    
+    <div className="grid md:grid-cols-3 gap-8">
+      
+      {/* Prayer Cells */}
+      <div className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition-shadow duration-300">
+        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+          <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
         </div>
-      </section>
+        <h4 className="font-semibold text-lg mb-3 text-gray-800">Prayer Cells</h4>
+        <p className="text-sm text-gray-600">
+          Individual and small group prayer rooms carved into the mountainside, offering 
+          private spaces for meditation and spiritual reflection. Each cell will feature 
+          natural stone walls and panoramic views of the surrounding landscape.
+        </p>
+      </div>
+
+      {/* Accommodation */}
+      <div className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition-shadow duration-300">
+        <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+          <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+        </div>
+        <h4 className="font-semibold text-lg mb-3 text-gray-800">Accommodation</h4>
+        <p className="text-sm text-gray-600">
+          Eco-friendly cottages and dormitories for overnight retreats, designed with 
+          traditional Kenyan architecture. Facilities will host up to 50 visitors for 
+          extended spiritual journeys and prayer vigils.
+        </p>
+      </div>
+
+      {/* Water & Security */}
+      <div className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition-shadow duration-300">
+        <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+          <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+        </div>
+        <h4 className="font-semibold text-lg mb-3 text-gray-800">Water & Security</h4>
+        <p className="text-sm text-gray-600">
+          Sustainable water harvesting system with storage for dry seasons, and 
+          comprehensive security including perimeter fencing, lighting, and 24/7 
+          surveillance to ensure visitor safety in this remote location.
+        </p>
+      </div>
+
+      {/* Cultural Center */}
+      <div className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition-shadow duration-300">
+        <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+          <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+          </svg>
+        </div>
+        <h4 className="font-semibold text-lg mb-3 text-gray-800">Cultural Center</h4>
+        <p className="text-sm text-gray-600">
+          A multi-purpose hall showcasing Kenyan art, traditional crafts, and cultural 
+          exhibitions. The center will host workshops, storytelling sessions, and 
+          cultural exchange programs celebrating Kenya's 42+ ethnic communities.
+        </p>
+      </div>
+
+      {/* Community Programs */}
+      <div className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition-shadow duration-300">
+        <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+          <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </div>
+        <h4 className="font-semibold text-lg mb-3 text-gray-800">Community Programs</h4>
+        <p className="text-sm text-gray-600">
+          Skills training, agricultural workshops, and youth mentorship programs 
+          benefiting local communities. Initiatives include sustainable farming 
+          techniques, craft development, and educational support for school children.
+        </p>
+      </div>
+
+      {/* Refreshment Area */}
+      <div className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition-shadow duration-300">
+        <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+          <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+          </svg>
+        </div>
+        <h4 className="font-semibold text-lg mb-3 text-gray-800">Refreshment Area</h4>
+        <p className="text-sm text-gray-600">
+          Traditional kitchen and dining space serving authentic Kenyan cuisine 
+          made from locally sourced ingredients. Features a "cultural kitchen" 
+          where visitors can learn to prepare traditional dishes.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* CULTURE */}
       <section id="culture" className="py-24 bg-white">
