@@ -47,7 +47,93 @@ const culturalImages = [
   "/preparing.jpeg",   // Use your actual file names
   "/prophetess.jpeg"
 ];
+const Preloader = () => {
+  return (
+    <motion.div
+      className="fixed inset-0 z-[9999] bg-green-900 flex flex-col items-center justify-center text-white"
+      initial={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
+    >
+      {/* Logo */}
+      <motion.img
+        src="/logo.png"
+        alt="Loading"
+        className="w-20 h-20 mb-6"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      />
+
+      {/* Loader text */}
+      <motion.p
+        className="tracking-widest uppercase text-sm text-green-200"
+        animate={{ opacity: [0.3, 1, 0.3] }}
+        transition={{ repeat: Infinity, duration: 1.5 }}
+      >
+        Preparing the Mountain...
+      </motion.p>
+
+      {/* Progress bar */}
+      <motion.div className="mt-8 w-48 h-1 bg-white/20 rounded-full overflow-hidden">
+        <motion.div
+          className="h-full bg-green-400"
+          animate={{ x: ["-100%", "100%"] }}
+          transition={{ repeat: Infinity, duration: 1.2, ease: "linear" }}
+        />
+
+      </motion.div>
+    </motion.div>
+  );
+};
+const preloadVideos = () => {
+  danceVideos.forEach((video) => {
+    const vid = document.createElement("video");
+    vid.src = video.videoUrl;
+    vid.preload = "metadata";
+  });
+};
+
+preloadVideos();
+
+const allImages = [
+  ...aboutImages,
+  ...culturalImages,
+  "/logo.png",
+  "/bible_people.jpeg",
+  "/background_image.png",
+  "/founder_image.jpeg",
+  "/humanity_call_international.webp",
+  "/kilume_dance2.png",
+  "/kilume_dance3.png",
+  "/dancing_video.png",
+];
+
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+  let loaded = 0;
+
+  const preloadImages = () => {
+    allImages.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+
+      img.onload = img.onerror = () => {
+        loaded++;
+        if (loaded >= allImages.length) {
+          setTimeout(() => setIsLoading(false), 600); // smooth exit
+        }
+      setTimeout(() => setIsLoading(false), 5000); // Failsafe: stop loading after 5 seconds
+      };
+    });
+  };
+
+  preloadImages();
+}, []);
+
+
   useEffect(() => {
     document.title = "Mountain Prayer Center";
   }, []);
@@ -72,7 +158,18 @@ useEffect(() => {
 }, []);
 
   return (
-    <div className="font-sans text-gray-800">
+    <>
+    <AnimatePresence>
+      {isLoading && <Preloader />}
+    </AnimatePresence>
+
+    {!isLoading && (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="font-sans text-gray-800"
+      >
       {/* NAVBAR - Redesigned with Logo & Action Button */}
       <header className="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
@@ -158,9 +255,10 @@ useEffect(() => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{
-                  duration: 1,
-                  ease: "easeInOut"
+                  duration: 1.6,
+                  ease: [0.4, 0.0, 0.2, 1]
                 }}
+
               />
             </AnimatePresence>
             
@@ -772,6 +870,10 @@ useEffect(() => {
       <footer className="bg-gray-900 text-gray-400 py-6 text-center text-sm">
         © {new Date().getFullYear()} Mountain Prayer Center. All rights reserved.
       </footer>
-    </div>
-  );
+    
+      </motion.div>
+    )}
+  </>
+);
+
 }
