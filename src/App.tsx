@@ -233,7 +233,7 @@ useEffect(() => {
       {/* HERO */}
       <section className="h-screen mt-8 bg-cover bg-center flex items-center justify-center text-white" style={{ backgroundImage: "url(/bible_people.jpeg)" }}>
         <div className="bg-black/50 p-10 rounded-xl max-w-2xl text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">The Tabernacle of Moses Prayer Center</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">The Tabernacle of Moses Prayer Mountain</h2>
           <p className="text-lg mb-6">A Sacred Mountain of Prayer, Culture & Hope transforming lives through faith, culture, and community development.</p>
           <a href="#donate" className="inline-block bg-green-600 hover:bg-green-700 px-8 py-3 rounded-full font-semibold">Support the Vision</a>
         </div>
