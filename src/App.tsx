@@ -360,11 +360,11 @@ useEffect(() => {
               </div>
             </div>
             
-            {/* Simple Link */}
+            {/* Simple Link
             <a href="#contact" className="inline-flex items-center text-green-700 font-semibold hover:text-green-800 transition-colors">
               Book a cultural visit 
               <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </a>
+            </a> */}
           </div>
 
           {/* SWAPPING IMAGE FRAME - Clean Style */}
@@ -538,104 +538,97 @@ useEffect(() => {
           </div>
         </div>
       </section>
-{/* TRIBUTE / PHASE 1 REPORT SECTION - With Background Image */}
-      <section className="py-24 relative overflow-hidden text-white border-y border-green-900">
+   {/* TRIBUTE / PHASE 1 STATUS SECTION */}
+    <section className="py-24 relative overflow-hidden text-white border-y border-green-900">
+      
+      {/* Background Image & Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="/humanity_call_international.webp" 
+          alt="Humanity Calls International Partnership" 
+          className="w-full h-full object-cover filter grayscale contrast-125 brightness-50"
+        />
+        {/* Dark Overlay to make text readable */}
+        <div className="absolute inset-0 bg-black/60 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-green-900/40" />
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         
-        {/* Background Image & Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/humanity_call_international.webp" // <-- REPLACE WITH YOUR ACTUAL IMAGE
-            alt="Phase 1 Progress" 
-            className="w-full h-full object-cover filter grayscale contrast-125 brightness-50"
-          />
-          {/* Greenish Gradient Overlay for branding */}
-          <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 to-black/80 mix-blend-multiply" />
-        </div>
-
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
+        <div className="grid md:grid-cols-2 gap-16 items-start">
           
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          {/* LEFT: The Tribute Message */}
+          <div>
+            <span className="inline-block py-1 px-3 rounded-full bg-green-500/20 border border-green-400/30 text-green-300 text-xs font-bold tracking-widest uppercase mb-6">
+              Partner Spotlight
+            </span>
             
-            {/* LEFT: The Tribute Message (White Text) */}
-            <div>
-              <span className="text-green-300 font-bold tracking-widest uppercase text-xs mb-2 block">
-                A Tribute to Humanity Calls International
-              </span>
-              <h3 className="text-3xl md:text-4xl font-bold mb-6">
-                Phase 1: <span className="text-green-400">The Foundation Laid</span>
-              </h3>
-              
-              <p className="text-gray-200 mb-6 leading-relaxed text-lg">
-                Thank you for the generous donation of funds toward materials for Phase 1 of construction. Your partnership laid the foundation for what is rising on Kyevaluki Mountain.**Phase 1 is now complete**. 
-              </p>
-              
-              <p className="text-gray-200 mb-8 leading-relaxed text-lg">
-                Because of you, the land is secured, the perimeter is sanctified, and the groundwork for the Tabernacle has been established. This victory belongs to every hand that gave and every knee that bowed in prayer.
-              </p>
+            <h3 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+              A Special Tribute to <br/>
+              <span className="text-green-400">Humanity Calls International</span>
+            </h3>
+            
+            <p className="text-gray-200 mb-6 leading-relaxed text-lg">
+              We extend our deepest gratitude to <strong>Humanity Calls International</strong> for their generous donation. Your support has provided the essential funding for Phase 1 construction materials, acting as the spark that has set this vision into motion.
+            </p>
+            
+            <p className="text-gray-200 mb-8 leading-relaxed text-lg">
+              Because of your partnership, we are no longer just planning; we are mobilizing. You have laid the financial foundation upon which we are now building.
+            </p>
 
-              {/* Scripture Quote (White/Green) */}
-              <blockquote className="border-l-4 border-green-500 pl-4 italic text-gray-300 font-serif text-lg">
-                "The glory of this present house will be greater than the glory of the former house, says the Lord Almighty."
-                <footer className="text-sm font-bold text-green-400 mt-3 not-italic">— Haggai 2:9</footer>
-              </blockquote>
+            {/* Scripture Quote */}
+            <blockquote className="border-l-4 border-green-500 pl-4 italic text-gray-300 font-serif text-lg">
+              "I thank my God every time I remember you. In all my prayers for all of you, I always pray with joy because of your partnership in the gospel."
+              <footer className="text-sm font-bold text-green-400 mt-3 not-italic">— Philippians 1:3-5</footer>
+            </blockquote>
+          </div>
+
+          {/* RIGHT: The 'Live Status' Card */}
+          <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl relative">
+            
+            <h4 className="text-xl font-bold mb-6 text-white flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+              Project Status: Phase 1
+            </h4>
+
+            {/* Timeline of Activity */}
+            <div className="space-y-6 relative border-l border-white/20 ml-3 pl-8">
+              
+              {/* Item 1: Completed (Funds) */}
+              <div className="relative">
+                <span className="absolute -left-[39px] top-1 flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-black text-xs font-bold">✓</span>
+                <h5 className="text-white font-bold text-lg">Grant Received</h5>
+                <p className="text-sm text-gray-300 mt-1">Funds from Humanity Calls International successfully received and allocated.</p>
+              </div>
+
+              {/* Item 2: Active (Procurement) */}
+              <div className="relative">
+                <span className="absolute -left-[39px] top-1 flex items-center justify-center w-6 h-6 rounded-full bg-yellow-500 text-black text-xs font-bold animate-pulse">●</span>
+                <h5 className="text-yellow-400 font-bold text-lg">Material Procurement</h5>
+                <p className="text-sm text-gray-300 mt-1">Currently sourcing cement, sand, and structural supplies. Delivery logistics underway.</p>
+              </div>
+
+              {/* Item 3: Pending (Ground Work) */}
+              <div className="relative opacity-50">
+                <span className="absolute -left-[39px] top-1 flex items-center justify-center w-6 h-6 rounded-full bg-white/20 text-white text-[10px]">○</span>
+                <h5 className="text-white font-bold text-lg">Breaking Ground</h5>
+                <p className="text-sm text-gray-300 mt-1">Next Step: Site clearing and foundation laying.</p>
+              </div>
+
             </div>
 
-            {/* RIGHT: The Achievements Card (White Card floating on top) */}
-            <div className="bg-white text-gray-900 p-8 rounded-2xl shadow-2xl border-t-4 border-green-600 relative">
-              {/* Optional: A small "Success" ribbon corner */}
-              <div className="absolute top-0 right-0 -mt-2 -mr-2 bg-green-600 text-white text-xs font-bold px-4 py-1 rounded-bl-lg shadow-md">
-                COMPLETED
-              </div>
-
-              <h4 className="text-xl font-bold mb-6 flex items-center gap-2">
-                <span className="w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm">✓</span>
-                Achievements Unlocked
-              </h4>
-
-              {/* Achievement List */}
-              <ul className="space-y-4 mb-8">
-                
-                {/* Item 1 */}
-                <li className="flex items-start gap-3 pb-4 border-b border-gray-100">
-                  <svg className="w-5 h-5 text-green-500 mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                  <div>
-                    <span className="font-bold text-gray-800 block">Land Acquisition</span>
-                    <span className="text-sm text-gray-500">The mountain site is fully purchased and secured.</span>
-                  </div>
-                </li>
-
-                {/* Item 2 */}
-                <li className="flex items-start gap-3 pb-4 border-b border-gray-100">
-                  <svg className="w-5 h-5 text-green-500 mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                  <div>
-                    <span className="font-bold text-gray-800 block">Site Clearing & Fencing</span>
-                    <span className="text-sm text-gray-500">Perimeter secured and paths cleared for access.</span>
-                  </div>
-                </li>
-
-                {/* Item 3 */}
-                <li className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-green-500 mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                  <div>
-                    <span className="font-bold text-gray-800 block">Water Survey</span>
-                    <span className="text-sm text-gray-500">Geological survey completed for borehole drilling.</span>
-                  </div>
-                </li>
-              </ul>
-
-              {/* Status Badge */}
-              <div className="bg-green-50 rounded-xl p-5 text-center border border-green-100">
-                <span className="text-green-800 font-bold text-sm uppercase tracking-wide">Phase 1 Funding Status</span>
-                <div className="text-3xl font-black text-green-700 mt-1">100% FUNDED</div>
-                <div className="w-full h-2 bg-green-200 rounded-full mt-3 overflow-hidden">
-                   <div className="h-full w-full bg-green-600 rounded-full"></div>
-                </div>
-              </div>
+            {/* Call to Action / Note */}
+            <div className="mt-8 pt-6 border-t border-white/10 text-center">
+              <p className="text-sm text-green-300 italic">
+                "Your generosity is turning blueprints into reality."
+              </p>
             </div>
 
           </div>
+
         </div>
-      </section>
+      </div>
+    </section>
       {/* DONATE SECTION - Compact Version */}
       <section id="donate" className="py-16 bg-green-700 text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
