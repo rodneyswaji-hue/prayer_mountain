@@ -14,32 +14,33 @@ const danceVideos: Video[] = [
   {
     id: 1,
     title: "Kilumi Rain Dance",
-    duration: "3:45",
+    duration: "0:38",
     thumbnail: "/kilume_dance2.png", // Use an image as a cover
     videoUrl: "/videos/kilume_dance2.mp4" // Path to your video file
   },
   {
     id: 2,
-    title: "Harvest Celebration",
-    duration: "4:20",
+    title: "Kilumi Celebration Dance",
+    duration: "0:55",
     thumbnail: "/dancing_video.png",
     videoUrl: "/videos/dancing_video.mp4"
   },
   {
     id: 3,
-    title: "Elder's Blessing",
-    duration: "2:15",
+    title: "Kilumi Traditional Dance",
+    duration: "0:15",
     thumbnail: "/kilume_dance3.png",
     videoUrl: "/videos/kilume_dance3.mp4"
   }
 ];
 const aboutImages = [
-  "/background_image.png",
+  "/bible_people.jpeg",
   "/chilling.jpeg",
   "/people_talking.jpeg",
   "/praying.jpeg",
   "/on_rock.jpeg",
   "/landscape.jpeg",
+  "/Sitting-on-rock.jpeg",
   "/bushy_area.jpeg",
 ];
 const culturalImages = [
@@ -681,12 +682,12 @@ useEffect(() => {
             </blockquote>
           </div>
 
-          {/* RIGHT: The 'Live Status' Card */}
+           {/* RIGHT: The 'Live Status' Card */}
           <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl relative">
             
             <h4 className="text-xl font-bold mb-6 text-white flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-              Project Status: Phase 1
+               Phase 1
             </h4>
 
             {/* Timeline of Activity */}
@@ -702,16 +703,16 @@ useEffect(() => {
               {/* Item 2: Active (Procurement) */}
               <div className="relative">
                 <span className="absolute -left-[39px] top-1 flex items-center justify-center w-6 h-6 rounded-full bg-yellow-500 text-black text-xs font-bold animate-pulse">●</span>
-                <h5 className="text-yellow-400 font-bold text-lg">Material Procurement</h5>
-                <p className="text-sm text-gray-300 mt-1">Currently sourcing cement, sand, and structural supplies. Delivery logistics underway.</p>
+                <h5 className="text-yellow-400 font-bold text-lg">Breaking Ground</h5>
+                <p className="text-sm text-gray-300 mt-1">Site clearing and foundation laying.</p>
               </div>
 
               {/* Item 3: Pending (Ground Work) */}
-              <div className="relative opacity-50">
+              {/* <div className="relative opacity-50">
                 <span className="absolute -left-[39px] top-1 flex items-center justify-center w-6 h-6 rounded-full bg-white/20 text-white text-[10px]">○</span>
                 <h5 className="text-white font-bold text-lg">Breaking Ground</h5>
                 <p className="text-sm text-gray-300 mt-1">Next Step: Site clearing and foundation laying.</p>
-              </div>
+              </div> */}
 
             </div>
 
@@ -724,7 +725,7 @@ useEffect(() => {
 
           </div>
 
-        </div>
+        </div> 
       </div>
     </section>
       {/* DONATE SECTION - Compact Version */}
