@@ -112,6 +112,7 @@ const allImages = [
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
   let loaded = 0;
@@ -196,6 +197,25 @@ useEffect(() => {
               </span>
             </div>
           </a>
+          {/* MOBILE MENU TOGGLE */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? (
+              /* Close icon */
+              <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              /* Hamburger icon */
+              <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+
 
           {/* RIGHT: NAVIGATION */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-600">
@@ -215,6 +235,14 @@ useEffect(() => {
               Culture
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span>
             </a>
+            <a
+              href="#partners"
+              className="hover:text-green-700 transition-colors relative group"
+            >
+              Partners
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span>
+            </a>
+
             <a href="#contact" className="hover:text-green-700 transition-colors relative group">
               Contact
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span>
@@ -229,6 +257,50 @@ useEffect(() => {
             </a>
           </nav>
         </div>
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25 }}
+              className="fixed top-[72px] left-0 w-full bg-white border-t border-gray-100 shadow-lg z-40 md:hidden"
+            >
+              <nav className="flex flex-col divide-y text-sm font-semibold text-gray-700">
+                
+                {[
+                  ["About", "#about"],
+                  ["Mission", "#mission"],
+                  ["Vision", "#vision"],
+                  ["Culture", "#culture"],
+                  ["Partners", "#partners"],
+                  ["Visit", "#visit"],
+                  ["Contact", "#contact"],
+                ].map(([label, href]) => (
+                  <a
+                    key={label}
+                    href={href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="px-6 py-4 hover:bg-green-50 hover:text-green-700 transition"
+                  >
+                    {label}
+                  </a>
+                ))}
+
+                {/* Donate CTA */}
+                <a
+                  href="#donate"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-6 py-4 bg-green-700 text-white text-center font-bold hover:bg-green-800 transition"
+                >
+                  Donate Now
+                </a>
+
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
       </header>
 
       {/* HERO */}
@@ -239,6 +311,98 @@ useEffect(() => {
           <a href="#donate" className="inline-block bg-green-600 hover:bg-green-700 px-8 py-3 rounded-full font-semibold">Support the Vision</a>
         </div>
       </section>
+      {/* FOREWORD SECTION */}
+      <section className="py-28 bg-white relative">
+        <div className="max-w-6xl mx-auto px-6 md:px-12">
+          <div className="grid md:grid-cols-12 gap-16 items-start">
+
+            {/* LEFT COLUMN: TITLE */}
+            <div className="md:col-span-4 md:sticky md:top-32">
+              <motion.div
+                initial={{ opacity: 0, x: -24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+                <span className="block text-xs font-bold tracking-[0.25em] uppercase text-green-600 mb-4">
+                  Foreword
+                </span>
+
+                <h2 className="text-4xl md:text-5xl font-serif leading-tight text-gray-900">
+                  A Sacred <br />
+                  <span className="italic text-green-700">Legacy</span> of <br />
+                  Faith
+                </h2>
+
+                {/* Subtle divider */}
+                <div className="w-20 h-[2px] bg-green-700 mt-8"></div>
+              </motion.div>
+            </div>
+
+            {/* RIGHT COLUMN: CONTENT */}
+            <div className="md:col-span-8 md:pl-14 md:border-l border-green-100">
+              <div className="space-y-14">
+
+                {/* BLOCK 1: FAMILY / LAND */}
+                <motion.div
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.15 }}
+                >
+                  <p className="text-xl md:text-2xl font-serif leading-relaxed text-gray-800">
+                    The family, donors of the land upon which this Prayer Center is being
+                    established, give thanks to Almighty God for His preservation and
+                    faithfulness, even in the face of illness and adversity.
+                  </p>
+
+                  <p className="mt-6 text-sm uppercase tracking-widest text-green-700 font-semibold">
+                    Honoring the Patriarch & Matriarch
+                  </p>
+                </motion.div>
+
+                {/* BLOCK 2: PATRIARCH & MATRIARCH */}
+                <motion.div
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                  className="bg-green-50/60 p-8 md:p-10 border-l-4 border-green-700"
+                >
+                  <p className="text-lg md:text-xl leading-relaxed text-gray-700 font-serif">
+                    We humbly honor the <strong>Patriarch and Matriarch</strong> who
+                    bequeathed this sacred site to their beloved son. May the Almighty
+                    God bless you abundantly and be with you forever.
+                  </p>
+                </motion.div>
+
+                {/* BLOCK 3: WORSHIPERS */}
+                <motion.div
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.45 }}
+                >
+                  <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                    To all worshipers — from the community and from afar — who have
+                    gathered, prayed, and stood upon this land for God: you have
+                    possessed this place for His glory and strengthened the family’s
+                    resolve to seek the Almighty fearlessly.
+                  </p>
+
+                  <p className="font-serif italic text-xl text-green-800">
+                    May the Almighty God hear and answer your prayers, now and forever.
+                  </p>
+                </motion.div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
 
       {/* ABOUT */}
       <section id="about" className="py-24 bg-white">
@@ -428,81 +592,87 @@ useEffect(() => {
   </div>
 </section>
 
-{/* CULTURE SECTION: Matching the Green/White Theme */}
-      <section id="culture" className="py-24 bg-white relative overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-          
-          {/* TEXT CONTENT - Styled with Gray & Green */}
-          <div>
-            <span className="text-green-600 font-bold tracking-widest uppercase text-xs mb-2 block">
-              Heritage & History
-            </span>
-            <h3 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-              The Beat of <span className="text-green-700">Kilumi</span>
-            </h3>
-            
-            <p className="text-xl font-serif italic text-gray-500 mb-6">
-              "When the drums speak, the heavens listen."
-            </p>
-            
-            <p className="text-gray-600 leading-relaxed mb-6">
-              We preserve the sacred <strong>Kwakathule traditions</strong>. Historically, when the land was dry, the elders played the Kilumi drums to invoke the blessing of rain. Today, these rhythms serve as a bridge between our past and our future.
-            </p>
-            
-            {/* TAGS - Matching the Vision Section colors */}
-            <div className="flex gap-4 mb-8">
-              <div className="bg-green-50 border border-green-100 px-4 py-2 rounded-full text-sm font-medium text-green-800 flex items-center gap-2">
-                🎵 Ritual Rhythms
-              </div>
-              <div className="bg-green-50 border border-green-100 px-4 py-2 rounded-full text-sm font-medium text-green-800 flex items-center gap-2">
-                🌧️ Rain Prayer
-              </div>
-            </div>
-            
-            {/* Simple Link
-            <a href="#contact" className="inline-flex items-center text-green-700 font-semibold hover:text-green-800 transition-colors">
-              Book a cultural visit 
-              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </a> */}
-          </div>
+{/* CULTURE SECTION: Kamba Heritage */}
+<section id="culture" className="py-24 bg-white relative overflow-hidden">
+  <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+    
+    {/* TEXT CONTENT */}
+    <div>
+      <span className="text-green-600 font-bold tracking-widest uppercase text-xs mb-2 block">
+        Heritage & History
+      </span>
 
-          {/* SWAPPING IMAGE FRAME - Clean Style */}
-          <div className="relative w-full h-[450px] rounded-2xl overflow-hidden shadow-xl bg-gray-100">
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={cultureIndex}
-                src={culturalImages[cultureIndex]}
-                className="absolute inset-0 w-full h-full object-cover"
-                alt="Cultural Heritage"
-                initial={{ opacity: 0, scale: 1.1 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 1.2 }}
-              />
-            </AnimatePresence>
-            
-            {/* Subtle Gradient Overlay for depth */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-            
-            <div className="absolute bottom-6 left-6 text-white pointer-events-none">
-              <p className="text-sm font-medium opacity-90">Preserving the voices of the earth</p>
-            </div>
-          </div>
-          
+      <h3 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+        The Beat of <span className="text-green-700">Kilumi</span>
+      </h3>
+      
+      <p className="text-xl font-serif italic text-gray-500 mb-6">
+        “When the drums speak, the heavens listen.”
+      </p>
+      
+      <p className="text-gray-600 leading-relaxed mb-6">
+        We honor and preserve the sacred <strong>Kamba tradition</strong> of Kilumi.
+        Historically, during seasons of drought, Kamba elders gathered to play
+        Kilumi drums as a communal prayer for rain. These rhythms carried
+        supplication, unity, and faith — binding the people to the land and to God.
+      </p>
+      
+      <p className="text-gray-600 leading-relaxed mb-6">
+        Today, Kilumi continues to serve as a spiritual and cultural bridge,
+        connecting ancestral wisdom with present-day worship and community life.
+      </p>
+
+      {/* TAGS */}
+      <div className="flex gap-4 mb-8">
+        <div className="bg-green-50 border border-green-100 px-4 py-2 rounded-full text-sm font-medium text-green-800 flex items-center gap-2">
+          🎵 Kilumi Rhythms
         </div>
-      </section>
-      {/* VIDEO SHOWCASE SECTION */}
-      <section className="py-20 bg-green-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <span className="text-green-600 font-bold tracking-widest uppercase text-xs mb-2 block">
-              Watch the Tradition
-            </span>
-            <h3 className="text-3xl font-bold text-gray-900">Live Performances</h3>
-            <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-              Experience the energy and spirit of the Kwakathule dancers.
-            </p>
-          </div>
+        <div className="bg-green-50 border border-green-100 px-4 py-2 rounded-full text-sm font-medium text-green-800 flex items-center gap-2">
+          🌧️ Kamba Rain Prayer
+        </div>
+      </div>
+    </div>
+
+    {/* IMAGE FRAME */}
+    <div className="relative w-full h-[450px] rounded-2xl overflow-hidden shadow-xl bg-gray-100">
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={cultureIndex}
+          src={culturalImages[cultureIndex]}
+          className="absolute inset-0 w-full h-full object-cover"
+          alt="Kamba Cultural Heritage"
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.2 }}
+        />
+      </AnimatePresence>
+      
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+      
+      <div className="absolute bottom-6 left-6 text-white pointer-events-none">
+        <p className="text-sm font-medium opacity-90">
+          Preserving Kamba cultural heritage
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+        {/* VIDEO SHOWCASE SECTION */}
+        <section className="py-20 bg-green-50">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <span className="text-green-600 font-bold tracking-widest uppercase text-xs mb-2 block">
+                Watch the Tradition
+              </span>
+              <h3 className="text-3xl font-bold text-gray-900">Live Performances</h3>
+              <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+                Experience the energy, rhythm, and spiritual expression of the
+                <strong> Kamba dancers</strong> through Kilumi performances.
+              </p>
+            </div>
+
 
           <div className="grid md:grid-cols-3 gap-8">
             {danceVideos.map((video) => (
@@ -637,97 +807,108 @@ useEffect(() => {
           </div>
         </div>
       </section>
-   {/* TRIBUTE / PHASE 1 STATUS SECTION */}
-    <section className="py-24 relative overflow-hidden text-white border-y border-green-900">
-      
-      {/* Background Image & Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="/humanity_call_international.webp" 
-          alt="Humanity Calls International Partnership" 
-          className="w-full h-full object-cover filter grayscale contrast-125 brightness-50"
-        />
-        {/* Dark Overlay to make text readable */}
-        <div className="absolute inset-0 bg-black/60 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-green-900/40" />
-      </div>
-
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      {/* PARTNER TRIBUTE / PROJECT STATUS SECTION */}
+      <section  id="partners" className="py-24 relative overflow-hidden text-white border-y border-green-900">
         
-        <div className="grid md:grid-cols-2 gap-16 items-start">
-          
-          {/* LEFT: The Tribute Message */}
-          <div>
-            <span className="inline-block py-1 px-3 rounded-full bg-green-500/20 border border-green-400/30 text-green-300 text-xs font-bold tracking-widest uppercase mb-6">
-              Partner Spotlight
-            </span>
-            
-            <h3 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-              A Special Tribute to <br/>
-              <span className="text-green-400">Humanity Calls International</span>
-            </h3>
-            
-            <p className="text-gray-200 mb-6 leading-relaxed text-lg">
-              We extend our deepest gratitude to <strong>Humanity Calls International</strong> for their generous donation. Your support has provided the essential funding for Phase 1 construction materials, acting as the spark that has set this vision into motion.
-            </p>
-            
-            <p className="text-gray-200 mb-8 leading-relaxed text-lg">
-              Because of your partnership, we are no longer just planning; we are mobilizing. You have laid the financial foundation upon which we are now building.
-            </p>
+        {/* Background */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/humanity_call_international.webp" 
+            alt="Humanity Calls International Partnership" 
+            className="w-full h-full object-cover filter grayscale contrast-125 brightness-50"
+          />
+          <div className="absolute inset-0 bg-black/60 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-green-900/40" />
+        </div>
 
-            {/* Scripture Quote */}
-            <blockquote className="border-l-4 border-green-500 pl-4 italic text-gray-300 font-serif text-lg">
-              "I thank my God every time I remember you. In all my prayers for all of you, I always pray with joy because of your partnership in the gospel."
-              <footer className="text-sm font-bold text-green-400 mt-3 not-italic">— Philippians 1:3-5</footer>
-            </blockquote>
-          </div>
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="grid md:grid-cols-2 gap-16 items-start">
 
-           {/* RIGHT: The 'Live Status' Card */}
-          <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl relative">
-            
-            <h4 className="text-xl font-bold mb-6 text-white flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-               Phase 1
-            </h4>
+            {/* LEFT: Tribute & Context */}
+            <div>
+              <span className="inline-block py-1 px-3 rounded-full bg-green-500/20 border border-green-400/30 text-green-300 text-xs font-bold tracking-widest uppercase mb-6">
+                Partner Recognition
+              </span>
 
-            {/* Timeline of Activity */}
-            <div className="space-y-6 relative border-l border-white/20 ml-3 pl-8">
-              
-              {/* Item 1: Completed (Funds) */}
-              <div className="relative">
-                <span className="absolute -left-[39px] top-1 flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-black text-xs font-bold">✓</span>
-                <h5 className="text-white font-bold text-lg">Grant Received</h5>
-                <p className="text-sm text-gray-300 mt-1">Funds from Humanity Calls International successfully received and allocated.</p>
-              </div>
+              <h3 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+                Honoring Our Partnership With <br />
+                <span className="text-green-400">Humanity Calls International</span>
+              </h3>
 
-              {/* Item 2: Active (Procurement) */}
-              <div className="relative">
-                <span className="absolute -left-[39px] top-1 flex items-center justify-center w-6 h-6 rounded-full bg-yellow-500 text-black text-xs font-bold animate-pulse">●</span>
-                <h5 className="text-yellow-400 font-bold text-lg">Breaking Ground</h5>
-                <p className="text-sm text-gray-300 mt-1">Site clearing and foundation laying.</p>
-              </div>
-
-              {/* Item 3: Pending (Ground Work) */}
-              {/* <div className="relative opacity-50">
-                <span className="absolute -left-[39px] top-1 flex items-center justify-center w-6 h-6 rounded-full bg-white/20 text-white text-[10px]">○</span>
-                <h5 className="text-white font-bold text-lg">Breaking Ground</h5>
-                <p className="text-sm text-gray-300 mt-1">Next Step: Site clearing and foundation laying.</p>
-              </div> */}
-
-            </div>
-
-            {/* Call to Action / Note */}
-            <div className="mt-8 pt-6 border-t border-white/10 text-center">
-              <p className="text-sm text-green-300 italic">
-                "Your generosity is turning blueprints into reality."
+              <p className="text-gray-200 mb-6 leading-relaxed text-lg">
+                We gratefully acknowledge <strong>Humanity Calls International</strong> for their
+                committed support toward the development of the Prayer Center.
+                Their partnership has affirmed this vision and positioned Phase 1
+                for activation.
               </p>
+
+              <p className="text-gray-200 mb-8 leading-relaxed text-lg">
+                While construction has not yet commenced, preparatory work is underway
+                as we await the release of initial Phase 1 funds. This partnership
+                remains a vital pillar in turning prayer, planning, and faith into
+                physical foundations.
+              </p>
+
+              <blockquote className="border-l-4 border-green-500 pl-4 italic text-gray-300 font-serif text-lg">
+                "I thank my God every time I remember you. In all my prayers for all of you,
+                I always pray with joy because of your partnership."
+                <footer className="text-sm font-bold text-green-400 mt-3 not-italic">
+                  — Philippians 1:3–5
+                </footer>
+              </blockquote>
+            </div>
+
+            {/* RIGHT: Phase Status Card */}
+            <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl relative">
+
+              <h4 className="text-xl font-bold mb-6 text-white flex items-center gap-3">
+                <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
+                Phase 1 Status
+              </h4>
+
+              <div className="space-y-6 relative border-l border-white/20 ml-3 pl-8">
+
+                {/* Commitment Confirmed */}
+                <div className="relative">
+                  <span className="absolute -left-[39px] top-1 flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-black text-xs font-bold">✓</span>
+                  <h5 className="text-white font-bold text-lg">Partnership Confirmed</h5>
+                  <p className="text-sm text-gray-300 mt-1">
+                    Phase 1 support committed by Humanity Calls International.
+                  </p>
+                </div>
+
+                {/* Pending Funds */}
+                <div className="relative">
+                  <span className="absolute -left-[39px] top-1 flex items-center justify-center w-6 h-6 rounded-full bg-yellow-500 text-black text-xs font-bold animate-pulse">●</span>
+                  <h5 className="text-yellow-400 font-bold text-lg">Funding Release Pending</h5>
+                  <p className="text-sm text-gray-300 mt-1">
+                    Initial Phase 1 funds awaiting final transfer completion.
+                  </p>
+                </div>
+
+                {/* Upcoming */}
+                <div className="relative opacity-70">
+                  <span className="absolute -left-[39px] top-1 flex items-center justify-center w-6 h-6 rounded-full bg-white/20 text-white text-[10px]">○</span>
+                  <h5 className="text-white font-bold text-lg">Construction Mobilization</h5>
+                  <p className="text-sm text-gray-300 mt-1">
+                    Groundwork and material procurement to begin upon fund release.
+                  </p>
+                </div>
+
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-white/10 text-center">
+                <p className="text-sm text-green-300 italic">
+                  “Faithful partnerships prepare the ground before the first stone is laid.”
+                </p>
+              </div>
+
             </div>
 
           </div>
+        </div>
+      </section>
 
-        </div> 
-      </div>
-    </section>
       {/* DONATE SECTION - Compact Version */}
       <section id="donate" className="py-16 bg-green-700 text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
