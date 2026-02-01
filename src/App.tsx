@@ -1434,7 +1434,7 @@ export default function App() {
             </div>
           </section>
 
-          {/* FOOTER - Minimal & Elegant. */}
+          {/* FOOTER -  */}
           <footer className="bg-gradient-to-br from-gray-900 via-emerald-950 to-gray-900 text-gray-400 py-12 border-t border-emerald-900/20">
             <div className="max-w-6xl mx-auto px-6 text-center">
               <div className="mb-6">
