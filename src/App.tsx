@@ -219,7 +219,7 @@ export default function App() {
                     <span className={`text-[10px] font-semibold uppercase tracking-[0.2em] transition-colors ${
                       scrolled ? 'text-emerald-600' : 'text-emerald-200'
                     }`}>
-                      Prayer Mountain
+                      Prayer Mountain · Foundation
                     </span>
                   </div>
                 </a>
@@ -303,9 +303,8 @@ export default function App() {
             </AnimatePresence>
           </header>
 
-          {/* HERO SECTION - Enhanced */}
+          {/* HERO SECTION */}
           <section className="relative h-screen flex items-center justify-center overflow-hidden">
-            {/* Background Image with Parallax Effect */}
             <motion.div 
               className="absolute inset-0"
               initial={{ scale: 1.1 }}
@@ -319,7 +318,6 @@ export default function App() {
               <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
             </motion.div>
 
-            {/* Animated Particles/Glow Effect */}
             <div className="absolute inset-0 opacity-30">
               {[...Array(20)].map((_, i) => (
                 <motion.div
@@ -342,7 +340,6 @@ export default function App() {
               ))}
             </div>
 
-            {/* Hero Content */}
             <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -378,7 +375,6 @@ export default function App() {
                 </div>
               </motion.div>
 
-              {/* Scroll Indicator */}
               <motion.div
                 className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
                 animate={{ y: [0, 10, 0] }}
@@ -391,9 +387,8 @@ export default function App() {
             </div>
           </section>
 
-          {/* FOREWORD SECTION - Refined */}
+          {/* FOREWORD SECTION */}
           <section className="py-32 bg-gradient-to-b from-white to-stone-50 relative overflow-hidden">
-            {/* Decorative Elements */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-500/5 rounded-full blur-3xl"></div>
             
@@ -432,9 +427,9 @@ export default function App() {
                       className="prose prose-lg max-w-none"
                     >
                       <p className="text-2xl font-serif leading-relaxed text-gray-800 mb-6">
-                        The family, donors of the land upon which this Prayer Center is being
-                        established, give thanks to Almighty God for His preservation and
-                        faithfulness, even in the face of illness and adversity.
+                        The Tabernacle of Moses Prayer Mountain Foundation gives thanks to Almighty God for His preservation and
+                        faithfulness, even in the face of illness and adversity. This land was donated by
+                        <strong className="text-emerald-800"> Prof. Titus Kanui</strong> as a thanksgiving offering after being healed from a three-year illness.
                       </p>
 
                       <p className="text-sm uppercase tracking-[0.2em] text-emerald-700 font-semibold">
@@ -482,12 +477,11 @@ export default function App() {
             </div>
           </section>
 
-          {/* ABOUT SECTION - Modernized */}
+          {/* ABOUT SECTION */}
           <section id="about" className="py-32 bg-white relative">
             <div className="max-w-6xl mx-auto px-6">
               <div className="grid md:grid-cols-2 gap-16 items-center">
                 
-                {/* Image Slider */}
                 <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -511,7 +505,6 @@ export default function App() {
                     
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                     
-                    {/* Navigation Dots */}
                     <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2">
                       {aboutImages.map((_, i) => (
                         <button
@@ -528,11 +521,9 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* Decorative Element */}
                   <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-3xl -z-10 blur-xl"></div>
                 </motion.div>
 
-                {/* Text Content */}
                 <motion.div
                   initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -544,21 +535,24 @@ export default function App() {
                   </span>
                   
                   <h3 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-gray-900 leading-tight">
-                    About the Prayer Center
+                    About the Foundation
                   </h3>
                   
                   <div className="space-y-6 text-gray-600 leading-relaxed">
                     <p className="text-lg">
-                      This sacred land, inherited through generations, has long been a
-                      place of prayer, reflection, and spiritual renewal. Located on a
-                      mountain-like formation, it carries natural wonders — including a
+                      The Tabernacle of Moses Prayer Mountain Foundation is built upon a sacred land
+                      donated by <strong className="text-gray-900">Prof. Titus Kanui</strong> as a
+                      thanksgiving to God following his miraculous healing from a three-year illness.
+                      Located in <strong className="text-gray-900">Kyevaluki, Machakos County</strong>,
+                      the site sits on a mountain-like formation with natural wonders — including a
                       mysterious air tunnel where sounds and objects echo back.
                     </p>
                     
                     <p className="text-lg">
-                      Despite its spiritual significance, the land remains undeveloped
-                      and unsafe. Our mission is to transform it into a secure,
-                      welcoming prayer sanctuary for all.
+                      We are currently developing the site — clearing bushes and constructing concrete
+                      benches — with plans to create designated prayer spaces for both Catholic faithfuls
+                      and other denominations. Our long-term vision encompasses women and youth
+                      empowerment, drug rehabilitation, and a community resource centre.
                     </p>
                   </div>
 
@@ -569,8 +563,8 @@ export default function App() {
                       </svg>
                     </div>
                     <div>
-                      <p className="font-semibold text-gray-900">Sacred Heritage</p>
-                      <p className="text-sm text-gray-500">Generations of faith and prayer</p>
+                      <p className="font-semibold text-gray-900">Registered Foundation</p>
+                      <p className="text-sm text-gray-500">Kyevaluki, Machakos County, Kenya</p>
                     </div>
                   </div>
                 </motion.div>
@@ -579,7 +573,179 @@ export default function App() {
             </div>
           </section>
 
-          {/* JOURNEY SECTION - NEW: Bush Clearing Video */}
+          {/* WELL-WISHERS APPEAL SECTION */}
+          <section id="appeal" className="py-32 bg-gradient-to-b from-stone-50 to-white relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
+
+            <div className="max-w-5xl mx-auto px-6 relative z-10">
+              <div className="text-center mb-14">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <span className="text-xs font-bold tracking-[0.3em] uppercase text-amber-600 mb-4 block">
+                    A Message to Well-Wishers
+                  </span>
+                  <h3 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6">
+                    Help Us Build a <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-green-600">Lasting Sanctuary</span>
+                  </h3>
+                  <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Your support — however small — will help establish a spiritual landmark for generations to come.
+                  </p>
+                </motion.div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-10 items-start">
+
+                {/* The Letter */}
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="bg-white rounded-3xl shadow-lg border border-gray-100 p-10"
+                >
+                  <div className="flex items-center gap-3 mb-8 pb-6 border-b border-gray-100">
+                    <div className="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center">
+                      <svg className="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <p className="text-sm font-semibold text-gray-500 uppercase tracking-widest">Our Appeal</p>
+                  </div>
+
+                  <div className="space-y-5 text-gray-700 leading-relaxed">
+                    <p className="text-lg font-serif">
+                      We are reaching out to share a vision very close to our hearts —
+                      <strong className="text-gray-900"> The Tabernacle of Moses Prayer Mountain</strong>, located in
+                      Kyevaluki, Machakos County.
+                    </p>
+
+                    <p>
+                      This centre sits on land donated by <strong>Prof. Titus Kanui</strong> as a thanksgiving to God
+                      after being healed from a three-year illness. We are currently clearing bushes and
+                      constructing concrete benches — building designated prayer spaces for both Catholic
+                      faithfuls and other denominations.
+                    </p>
+
+                    <p className="font-semibold text-gray-900">Our long-term vision includes:</p>
+                    <ul className="space-y-2 pl-2">
+                      {[
+                        "Women and youth empowerment programs",
+                        "Drug abuse rehabilitation",
+                        "A community resource centre",
+                        "Secure prayer retreat facilities"
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <svg className="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" />
+                          </svg>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <p>
+                      However, we are financially limited and progress is slow. We humbly request your
+                      support as a well-wisher to help this vision become a reality.
+                    </p>
+                  </div>
+
+                  <div className="mt-8 pt-6 border-t border-gray-100">
+                    <p className="text-sm text-gray-500 mb-1">With blessings,</p>
+                    <p className="font-bold text-gray-900">Benjamin Musyimi</p>
+                    <p className="text-sm text-emerald-700">Secretary</p>
+                    <p className="font-bold text-gray-900 mt-2">Titus Kanui</p>
+                    <p className="text-sm text-emerald-700">Director</p>
+                    <p className="font-bold text-gray-900 mt-2">Mary Nthenya Ikusya</p>
+                    <p className="text-sm text-emerald-700">Treasurer</p>
+                  </div>
+                </motion.div>
+
+                {/* How to Support */}
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="space-y-6"
+                >
+                  <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-3xl p-8 border border-emerald-100">
+                    <h4 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                      <span className="w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
+                      Financial Contribution
+                    </h4>
+                    <p className="text-gray-600 mb-4">
+                      Send your contribution directly via M-Pesa to our Treasurer:
+                    </p>
+                    <div className="bg-white rounded-2xl p-5 border border-emerald-200 space-y-3">
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm font-semibold text-emerald-700 uppercase tracking-wide">Recipient</span>
+                        <span className="font-bold text-gray-900">Mary Nthenya Ikusya</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm font-semibold text-emerald-700 uppercase tracking-wide">Role</span>
+                        <span className="text-gray-700">Foundation Treasurer</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm font-semibold text-emerald-700 uppercase tracking-wide">M-Pesa</span>
+                        <span className="font-mono font-bold text-xl text-gray-900">+254 710 324 678</span>
+                      </div>
+                      <div className="mt-3 pt-3 border-t border-emerald-100">
+                        <p className="text-xs text-amber-700 bg-amber-50 rounded-xl px-4 py-3 flex items-start gap-2">
+                          <svg className="w-4 h-4 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          A dedicated foundation account is currently being set up. In the meantime, all contributions are received by our Treasurer, Mary Nthenya Ikusya.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-8 border border-amber-100">
+                    <h4 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                      <span className="w-8 h-8 bg-amber-500 text-white rounded-full flex items-center justify-center text-sm font-bold">2</span>
+                      Building Materials
+                    </h4>
+                    <p className="text-gray-600 mb-4">We gratefully accept donations of building materials, including:</p>
+                    <div className="flex flex-wrap gap-2">
+                      {["Cement", "Fencing materials", "Iron sheets", "Timber", "Bricks", "Sand & Ballast"].map((item) => (
+                        <span key={item} className="px-4 py-2 bg-white border border-amber-200 rounded-full text-sm font-medium text-amber-800">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 border border-blue-100">
+                    <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                      <span className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold">3</span>
+                      Other Ways to Help
+                    </h4>
+                    <p className="text-gray-600">
+                      Connections, skills, volunteer time, or any other contribution that can help
+                      advance this work are equally welcome and deeply appreciated.
+                    </p>
+                    <a
+                      href="#contact"
+                      className="inline-flex items-center gap-2 mt-5 px-6 py-3 bg-blue-600 text-white rounded-full text-sm font-semibold hover:bg-blue-700 transition-all hover:scale-105 shadow-md"
+                    >
+                      Get in Touch
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </a>
+                  </div>
+                </motion.div>
+
+              </div>
+            </div>
+          </section>
+
+          {/* JOURNEY SECTION */}
           <section className="py-32 bg-gradient-to-b from-white via-emerald-50/30 to-white relative overflow-hidden">
             <div className="absolute inset-0 opacity-5">
               <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-500 rounded-full blur-3xl"></div>
@@ -614,18 +780,16 @@ export default function App() {
                 transition={{ duration: 1 }}
                 className="relative rounded-3xl overflow-hidden shadow-2xl bg-gray-900"
               >
-                {/* Video Container */}
                 <div className="relative aspect-video">
                   <video
-                    src="/Bush_Clearing.mp4" // Add your bush clearing video here
+                    src="/Bush_Clearing.mp4"
                     controls
-                    poster="/clearing bush.png" // Optional: Add a thumbnail
+                    poster="/clearing bush.png"
                     className="w-full h-full object-cover"
                   >
                     Your browser does not support the video tag.
                   </video>
                   
-                  {/* Overlay Badge */}
                   <div className="absolute top-6 left-6 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full">
                     <p className="text-white text-sm font-semibold flex items-center gap-2">
                       <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
@@ -634,7 +798,6 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* Video Info Panel */}
                 <div className="bg-gradient-to-r from-emerald-900 to-green-900 p-8 text-white">
                   <div className="grid md:grid-cols-3 gap-6 text-center">
                     <div className="border-r border-white/20 last:border-0">
@@ -653,7 +816,6 @@ export default function App() {
                 </div>
               </motion.div>
 
-              {/* Timeline */}
               <div className="mt-16 grid md:grid-cols-4 gap-8">
                 {[
                   { phase: "Phase 1", title: "Land Clearing", status: "In Progress" },
@@ -689,9 +851,8 @@ export default function App() {
             </div>
           </section>
 
-          {/* MISSION STATEMENT - Refined */}
+          {/* MISSION STATEMENT */}
           <section id="mission" className="py-32 bg-gradient-to-br from-emerald-900 via-green-900 to-emerald-950 text-white relative overflow-hidden">
-            {/* Decorative Pattern */}
             <div className="absolute inset-0 opacity-10">
               <svg width="100%" height="100%">
                 <pattern id="dots" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
@@ -727,7 +888,7 @@ export default function App() {
             </div>
           </section>
 
-          {/* VISION SECTION - Enhanced Cards */}
+          {/* VISION SECTION */}
           <section id="vision" className="py-32 bg-gradient-to-b from-stone-50 to-white">
             <div className="max-w-7xl mx-auto px-6">
               <div className="text-center mb-20">
@@ -797,7 +958,6 @@ export default function App() {
                     transition={{ duration: 0.5, delay: i * 0.1 }}
                     className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-emerald-200 relative overflow-hidden"
                   >
-                    {/* Gradient Background on Hover */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
                     
                     <div className="relative z-10">
@@ -821,14 +981,13 @@ export default function App() {
             </div>
           </section>
 
-          {/* CULTURE SECTION - Enhanced */}
+          {/* CULTURE SECTION */}
           <section id="culture" className="py-32 bg-gradient-to-b from-white to-emerald-50/30 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
             
             <div className="max-w-6xl mx-auto px-6">
               <div className="grid md:grid-cols-2 gap-20 items-center">
                 
-                {/* Text Content */}
                 <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -861,7 +1020,6 @@ export default function App() {
                     </p>
                   </div>
 
-                  {/* Tags */}
                   <div className="flex flex-wrap gap-3 mt-8">
                     <span className="px-4 py-2 bg-emerald-50 border border-emerald-200 rounded-full text-sm font-medium text-emerald-800">
                       🎵 Kilumi Rhythms
@@ -872,7 +1030,6 @@ export default function App() {
                   </div>
                 </motion.div>
 
-                {/* Image Frame */}
                 <motion.div
                   initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -909,7 +1066,7 @@ export default function App() {
             </div>
           </section>
 
-          {/* VIDEO SHOWCASE - Refined */}
+          {/* VIDEO SHOWCASE */}
           <section className="py-32 bg-white">
             <div className="max-w-7xl mx-auto px-6">
               <div className="text-center mb-16">
@@ -953,7 +1110,6 @@ export default function App() {
                       
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                       
-                      {/* Play Button */}
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="w-16 h-16 bg-white/95 backdrop-blur rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:bg-emerald-500 transition-all duration-300">
                           <svg className="w-7 h-7 text-gray-900 group-hover:text-white ml-1 transition-colors" fill="currentColor" viewBox="0 0 24 24">
@@ -962,7 +1118,6 @@ export default function App() {
                         </div>
                       </div>
                       
-                      {/* Duration */}
                       <div className="absolute bottom-3 right-3 bg-black/80 backdrop-blur text-white text-xs font-bold px-3 py-1.5 rounded-full">
                         {video.duration}
                       </div>
@@ -1023,7 +1178,7 @@ export default function App() {
             )}
           </AnimatePresence>
 
-          {/* VISIT SECTION - Enhanced Map */}
+          {/* VISIT SECTION */}
           <section id="visit" className="py-32 bg-gradient-to-b from-stone-50 to-white">
             <div className="max-w-6xl mx-auto px-6">
               <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -1045,7 +1200,7 @@ export default function App() {
                   <p className="text-lg text-gray-600 leading-relaxed mb-6">
                     The Prayer Mountain is open to individuals and groups seeking a peaceful
                     place for prayer, reflection, and spiritual renewal. Set on elevated
-                    ground, the site offers a calm environment away from everyday life.
+                    ground in Kyevaluki, Machakos County, the site offers a calm environment away from everyday life.
                   </p>
                   
                   <p className="text-gray-600 leading-relaxed mb-8">
@@ -1057,7 +1212,7 @@ export default function App() {
                   <div className="space-y-3 mb-8">
                     {[
                       "Personal and group prayer sessions",
-                      "Designated prayer points and natural spaces",
+                      "Designated prayer points for all denominations",
                       "Overnight prayer retreats in secure environment",
                       "Scenic mountain views and peaceful surroundings",
                       "Cultural learning and reflection opportunities"
@@ -1103,7 +1258,7 @@ export default function App() {
             </div>
           </section>
 
-          {/* PARTNERS/IMPACT SECTION - Refined */}
+          {/* PARTNERS/IMPACT SECTION */}
           <section id="partners" className="py-32 relative overflow-hidden text-white">
             <div className="absolute inset-0 z-0">
               <img 
@@ -1135,7 +1290,7 @@ export default function App() {
                   <div className="space-y-6 text-gray-200 text-lg leading-relaxed">
                     <p>
                       We extend our deepest gratitude to the families and individuals who 
-                      have stepped forward to sow the first seeds for the Prayer Center.
+                      have stepped forward to sow the first seeds for the Foundation.
                     </p>
 
                     <p>
@@ -1162,7 +1317,7 @@ export default function App() {
                 >
                   <h4 className="text-2xl font-bold mb-8 text-white flex items-center gap-3">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    Community Impact Report
+                    Foundation Impact Report
                   </h4>
 
                   <div className="space-y-8">
@@ -1204,7 +1359,7 @@ export default function App() {
             </div>
           </section>
 
-          {/* DONATE SECTION - Elegant Cards */}
+          {/* DONATE SECTION */}
           <section id="donate" className="py-32 bg-gradient-to-br from-emerald-900 via-green-900 to-emerald-950 text-white relative overflow-hidden">
             <div className="absolute inset-0 opacity-10">
               <svg width="100%" height="100%">
@@ -1247,24 +1402,37 @@ export default function App() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-bold text-xl">M-Pesa Paybill</h4>
-                      <p className="text-sm text-emerald-300">Fast & Direct</p>
+                      <h4 className="font-bold text-xl">M-Pesa (Treasurer)</h4>
+                      <p className="text-sm text-emerald-300">Send Directly & Securely</p>
                     </div>
                   </div>
                   
                   <div className="space-y-4">
-                    <div className="flex justify-between items-center py-3">
-                      <span className="text-sm font-semibold text-emerald-300 uppercase tracking-wider">Paybill</span>
-                      <span className="font-mono font-bold text-2xl">XXXXXX</span>
+                    <div className="flex justify-between items-center py-3 border-b border-white/10">
+                      <span className="text-sm font-semibold text-emerald-300 uppercase tracking-wider">Send To</span>
+                      <span className="font-bold text-lg">Mary Nthenya Ikusya</span>
+                    </div>
+                    <div className="flex justify-between items-center py-3 border-b border-white/10">
+                      <span className="text-sm font-semibold text-emerald-300 uppercase tracking-wider">Role</span>
+                      <span className="font-medium">Foundation Treasurer</span>
                     </div>
                     <div className="flex justify-between items-center py-3">
-                      <span className="text-sm font-semibold text-emerald-300 uppercase tracking-wider">Account</span>
-                      <span className="font-medium">Your Name</span>
+                      <span className="text-sm font-semibold text-emerald-300 uppercase tracking-wider">Number</span>
+                      <span className="font-mono font-bold text-2xl">+254 710 324 678</span>
                     </div>
+                  </div>
+
+                  <div className="mt-6 pt-5 border-t border-white/20">
+                    <p className="text-xs text-amber-300 bg-amber-500/10 border border-amber-500/20 rounded-xl px-4 py-3 flex items-start gap-2">
+                      <svg className="w-4 h-4 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      A dedicated foundation paybill account is currently being set up. In the meantime, contributions can be sent directly to our Treasurer, Mary Nthenya Ikusya.
+                    </p>
                   </div>
                 </motion.div>
 
-                {/* BANK */}
+                {/* MATERIALS / OTHER */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -1273,34 +1441,45 @@ export default function App() {
                   className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 hover:bg-white/15 transition-all"
                 >
                   <div className="flex items-center gap-4 mb-6 pb-6 border-b border-white/20">
-                    <div className="w-14 h-14 bg-blue-500 rounded-2xl flex items-center justify-center">
+                    <div className="w-14 h-14 bg-amber-500 rounded-2xl flex items-center justify-center">
                       <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-bold text-xl">Bank Transfer</h4>
-                      <p className="text-sm text-blue-300">Bank Name</p>
+                      <h4 className="font-bold text-xl">Building Materials</h4>
+                      <p className="text-sm text-amber-300">In-Kind Donations Welcome</p>
                     </div>
                   </div>
 
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center py-3">
-                      <span className="text-sm font-semibold text-blue-300 uppercase tracking-wider">Account</span>
-                      <span className="font-mono font-bold text-lg">XXX XXX XXXX</span>
-                    </div>
-                    <div className="flex justify-between items-center py-3">
-                      <span className="text-sm font-semibold text-blue-300 uppercase tracking-wider">Branch</span>
-                      <span className="font-medium">Nairobi Branch</span>
-                    </div>
+                  <p className="text-gray-200 mb-6 leading-relaxed">
+                    We also gratefully receive donations of building materials to support construction on the mountain. Every item donated brings us one step closer to completing the sanctuary.
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {["Cement", "Iron sheets", "Fencing materials", "Timber", "Bricks", "Sand & Ballast"].map((item) => (
+                      <span key={item} className="px-3 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-white">
+                        {item}
+                      </span>
+                    ))}
                   </div>
+
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-amber-500 hover:bg-amber-400 text-white rounded-full text-sm font-semibold transition-all hover:scale-105 shadow-md"
+                  >
+                    Contact Us to Arrange
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
                 </motion.div>
 
               </div>
             </div>
           </section>
 
-          {/* FOUNDER - Elegant Profile */}
+          {/* FOUNDER */}
           <section className="py-32 bg-gradient-to-b from-white to-stone-50">
             <div className="max-w-4xl mx-auto px-6">
               <motion.div
@@ -1320,23 +1499,25 @@ export default function App() {
                 </div>
 
                 <span className="text-xs font-bold tracking-[0.3em] uppercase text-emerald-600 mb-4 block">
-                  Meet the Founder
+                  Meet the Director & Founder
                 </span>
                 
-                <h4 className="text-3xl font-serif font-bold text-gray-900 mb-6">
-                  A Vision Born of Faith
+                <h4 className="text-3xl font-serif font-bold text-gray-900 mb-2">
+                  Prof. Titus Kanui
                 </h4>
+
+                <p className="text-emerald-700 font-medium mb-6">Director, The Tabernacle of Moses Prayer Mountain Foundation</p>
                 
                 <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
-                  Driven by faith, heritage, and community responsibility, the founder 
-                  is committed to preserving this sacred land and transforming it into 
-                  a place of hope for generations to come.
+                  Driven by a miraculous healing and deep faith, Prof. Titus Kanui donated this sacred land
+                  as a thanksgiving offering to God. His vision is to see this mountain become a lasting
+                  place of prayer, healing, and hope for all generations.
                 </p>
               </motion.div>
             </div>
           </section>
 
-          {/* CONTACT - Modern Cards */}
+          {/* CONTACT */}
           <section id="contact" className="py-32 bg-white">
             <div className="max-w-6xl mx-auto px-6">
               
@@ -1354,7 +1535,7 @@ export default function App() {
                     We'd Love to Hear from You
                   </h3>
                   <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                    Whether you have questions about visiting, prayer requests, or just want to say hello.
+                    Whether you have questions about visiting, prayer requests, or want to support the foundation.
                   </p>
                 </motion.div>
               </div>
@@ -1434,7 +1615,7 @@ export default function App() {
             </div>
           </section>
 
-          {/* FOOTER -  */}
+          {/* FOOTER */}
           <footer className="bg-gradient-to-br from-gray-900 via-emerald-950 to-gray-900 text-gray-400 py-12 border-t border-emerald-900/20">
             <div className="max-w-6xl mx-auto px-6 text-center">
               <div className="mb-6">
@@ -1442,9 +1623,12 @@ export default function App() {
                 <p className="text-sm font-serif italic text-gray-500">
                   A Sacred Mountain of Prayer & Heritage
                 </p>
+                <p className="text-xs text-gray-600 mt-2">
+                  The Tabernacle of Moses Prayer Mountain Foundation · Kyevaluki, Machakos County, Kenya
+                </p>
               </div>
               <p className="text-sm">
-                © {new Date().getFullYear()} The Tabernacle Prayer Mountain. All rights reserved.
+                © {new Date().getFullYear()} The Tabernacle of Moses Prayer Mountain Foundation. All rights reserved.
               </p>
             </div>
           </footer>
