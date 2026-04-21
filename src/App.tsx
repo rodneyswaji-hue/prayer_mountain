@@ -940,7 +940,7 @@ export default function App() {
                   {
                     icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z",
                     title: "Community Programs",
-                    desc: "Skills training, agricultural workshops, and youth mentorship including sustainable farming and educational support.",
+                    desc: "Skills training, agricultural workshops, and youth mentorship including sustainable farming and educational support. We also engage in social awareness programs addressing marginalized groups in society, including the LGBTQ+ community, as part of our broader community development mandate.",
                     color: "from-red-500 to-rose-500"
                   },
                   {
@@ -948,6 +948,12 @@ export default function App() {
                     title: "Refreshment Area",
                     desc: "Traditional kitchen serving authentic Kenyan cuisine from local ingredients, featuring a cultural kitchen for learning traditional dishes.",
                     color: "from-indigo-500 to-blue-500"
+                  },
+                  {
+                    icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+                    title: "Disability Support Centre",
+                    desc: "A planned dedicated facility to support people living with disabilities — offering therapy, skills training, spiritual care, and community integration programs.",
+                    color: "from-teal-500 to-emerald-500"
                   }
                 ].map((item, i) => (
                   <motion.div
@@ -1517,6 +1523,85 @@ export default function App() {
             </div>
           </section>
 
+          {/* DISABILITY INCLUSION */}
+          <section className="py-24 bg-gradient-to-b from-stone-50 to-white">
+            <div className="max-w-6xl mx-auto px-6">
+              <div className="grid md:grid-cols-2 gap-16 items-center">
+
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <span className="text-xs font-bold tracking-[0.3em] uppercase text-teal-600 mb-4 block">
+                    Coming Soon
+                  </span>
+                  <h3 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6 leading-tight">
+                    A Dedicated Centre for <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600">People with Disabilities</span>
+                  </h3>
+                  <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                    As part of our long-term development vision, the Foundation is planning a dedicated support centre for people living with disabilities. This will be a purpose-built facility — not just an accessible space, but a place specifically designed to serve, uplift, and empower.
+                  </p>
+                  <p className="text-gray-600 leading-relaxed mb-8">
+                    The centre will offer therapy and rehabilitation support, vocational skills training, spiritual care, and community integration programs — all rooted in dignity and faith.
+                  </p>
+                  <div className="space-y-3">
+                    {[
+                      "Therapy & rehabilitation programs",
+                      "Vocational skills & livelihood training",
+                      "Spiritual care and prayer support",
+                      "Community integration & social programs",
+                      "Support for families of persons with disabilities"
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <svg className="w-5 h-5 text-teal-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <p className="text-gray-700">{item}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="mt-8 text-sm text-teal-700 bg-teal-50 border border-teal-100 rounded-xl px-5 py-3">
+                    This facility is currently in the planning phase. We welcome partnerships, funding, and expertise to help bring it to life.
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="grid grid-cols-2 gap-6"
+                >
+                  {[
+                    { icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z", label: "Physical Disabilities", color: "from-blue-500 to-cyan-500" },
+                    { icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0zM2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z", label: "Visual Impairment", color: "from-purple-500 to-pink-500" },
+                    { icon: "M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3", label: "Hearing Impairment", color: "from-amber-500 to-orange-500" },
+                    { icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253", label: "Skills & Training", color: "from-teal-500 to-emerald-500" }
+                  ].map((item, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: i * 0.1 }}
+                      className="bg-white rounded-3xl p-6 shadow-lg border border-gray-100 text-center hover:shadow-xl transition-all"
+                    >
+                      <div className={`w-14 h-14 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md`}>
+                        <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
+                        </svg>
+                      </div>
+                      <p className="font-semibold text-gray-900 text-sm">{item.label}</p>
+                    </motion.div>
+                  ))}
+                </motion.div>
+
+              </div>
+            </div>
+          </section>
+
           {/* CONTACT */}
           <section id="contact" className="py-32 bg-white">
             <div className="max-w-6xl mx-auto px-6">
@@ -1627,7 +1712,7 @@ export default function App() {
                   The Tabernacle of Moses Prayer Mountain Foundation · Kyevaluki, Machakos County, Kenya
                 </p>
               </div>
-              <p className="text-sm">
+              <p className="text-sm mt-4">
                 © {new Date().getFullYear()} The Tabernacle of Moses Prayer Mountain Foundation. All rights reserved.
               </p>
             </div>
