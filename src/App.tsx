@@ -956,7 +956,7 @@ export default function App() {
                 <div className="bg-gradient-to-r from-emerald-900 to-green-900 px-8 py-5 text-white">
                   <p className="text-xs font-bold tracking-[0.3em] uppercase text-emerald-300 mb-1">Budget Breakdown</p>
                   <h4 className="text-xl font-bold">Project Finance Vision</h4>
-                  <p className="text-sm text-emerald-200 mt-1">How your contributions are allocated — e.g. KES 251,940 to secure the land and provide controlled access</p>
+                  <p className="text-sm text-emerald-200 mt-1">How your contributions are allocated </p>
                 </div>
                 <img
                   src="/Project finance vision.jpeg"
