@@ -945,26 +945,6 @@ export default function App() {
                 </motion.div>
               </div>
 
-              {/* Finance Vision Image */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="mb-16 rounded-3xl overflow-hidden shadow-xl border border-gray-100"
-              >
-                <div className="bg-gradient-to-r from-emerald-900 to-green-900 px-8 py-5 text-white">
-                  <p className="text-xs font-bold tracking-[0.3em] uppercase text-emerald-300 mb-1">Budget Breakdown</p>
-                  <h4 className="text-xl font-bold">Project Finance Vision</h4>
-                  <p className="text-sm text-emerald-200 mt-1">How your contributions are allocated </p>
-                </div>
-                <img
-                  src="/Project finance vision.jpeg"
-                  alt="Project Finance Vision — budget breakdown showing how funds are allocated"
-                  className="w-full object-contain bg-white"
-                />
-              </motion.div>
-
               <div className="grid md:grid-cols-3 gap-8">
                 {[
                   {
@@ -1038,6 +1018,26 @@ export default function App() {
                   </motion.div>
                 ))}
               </div>
+
+              {/* Finance Vision Image */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="mt-16 rounded-3xl overflow-hidden shadow-xl border border-gray-100"
+              >
+                <div className="bg-gradient-to-r from-emerald-900 to-green-900 px-8 py-5 text-white">
+                  <p className="text-xs font-bold tracking-[0.3em] uppercase text-emerald-300 mb-1">Budget Breakdown</p>
+                  <h4 className="text-xl font-bold">Project Finance Vision</h4>
+                  <p className="text-sm text-emerald-200 mt-1">How your contributions are allocated </p>
+                </div>
+                <img
+                  src="/Project finance vision.jpeg"
+                  alt="Project Finance Vision — budget breakdown showing how funds are allocated"
+                  className="w-full object-contain bg-white"
+                />
+              </motion.div>
             </div>
           </section>
 
