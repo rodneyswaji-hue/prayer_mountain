@@ -43,6 +43,7 @@ const aboutImages = [
   "/landscape.jpeg",
   "/Sitting-on-rock.jpeg",
   "/bushy_area.jpeg",
+  "/Professors visiting.jpeg",
 ];
 
 const culturalImages = [
@@ -773,48 +774,81 @@ export default function App() {
                 </motion.div>
               </div>
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1 }}
-                className="relative rounded-3xl overflow-hidden shadow-2xl bg-gray-900"
-              >
-                <div className="relative aspect-video">
-                  <video
-                    src="/Bush_Clearing.mp4"
-                    controls
-                    poster="/clearing bush.png"
-                    className="w-full h-full object-cover"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                  
-                  <div className="absolute top-6 left-6 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full">
-                    <p className="text-white text-sm font-semibold flex items-center gap-2">
-                      <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
-                      Live Progress
-                    </p>
+              <div className="grid md:grid-cols-2 gap-8">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1 }}
+                  className="relative rounded-3xl overflow-hidden shadow-2xl bg-gray-900"
+                >
+                  <div className="relative aspect-video">
+                    <video
+                      src="/Bush_Clearing.mp4"
+                      controls
+                      poster="/clearing bush.png"
+                      className="w-full h-full object-cover"
+                    >
+                      Your browser does not support the video tag.
+                    </video>
+                    <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full">
+                      <p className="text-white text-xs font-semibold flex items-center gap-2">
+                        <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                        Live Progress
+                      </p>
+                    </div>
                   </div>
-                </div>
+                  <div className="bg-gradient-to-r from-emerald-900 to-green-900 p-5 text-white">
+                    <p className="font-semibold text-sm">Bush Clearing</p>
+                    <p className="text-xs text-emerald-300 mt-1">Initial land preparation underway</p>
+                  </div>
+                </motion.div>
 
-                <div className="bg-gradient-to-r from-emerald-900 to-green-900 p-8 text-white">
-                  <div className="grid md:grid-cols-3 gap-6 text-center">
-                    <div className="border-r border-white/20 last:border-0">
-                      <p className="text-3xl font-bold mb-1">Phase 1</p>
-                      <p className="text-sm text-emerald-200">Land Preparation</p>
-                    </div>
-                    <div className="border-r border-white/20 last:border-0">
-                      <p className="text-3xl font-bold mb-1">In Progress</p>
-                      <p className="text-sm text-emerald-200">Clearing & Development</p>
-                    </div>
-                    <div>
-                      <p className="text-3xl font-bold mb-1">2026</p>
-                      <p className="text-sm text-emerald-200">Foundation Year</p>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.15 }}
+                  className="relative rounded-3xl overflow-hidden shadow-2xl bg-gray-900"
+                >
+                  <div className="relative aspect-video">
+                    <video
+                      src="/videos/working on the site.mp4"
+                      controls
+                      className="w-full h-full object-cover"
+                    >
+                      Your browser does not support the video tag.
+                    </video>
+                    <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full">
+                      <p className="text-white text-xs font-semibold flex items-center gap-2">
+                        <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                        Live Progress
+                      </p>
                     </div>
                   </div>
+                  <div className="bg-gradient-to-r from-emerald-900 to-green-900 p-5 text-white">
+                    <p className="font-semibold text-sm">Road to the Prayer Mountain</p>
+                    <p className="text-xs text-emerald-300 mt-1">Uprooting of tree stumps on the designated road going on now</p>
+                  </div>
+                </motion.div>
+              </div>
+
+              <div className="mt-8 bg-gradient-to-r from-emerald-900 to-green-900 rounded-3xl p-8 text-white">
+                <div className="grid md:grid-cols-3 gap-6 text-center">
+                  <div className="border-r border-white/20 last:border-0">
+                    <p className="text-3xl font-bold mb-1">Phase 1</p>
+                    <p className="text-sm text-emerald-200">Land Preparation</p>
+                  </div>
+                  <div className="border-r border-white/20 last:border-0">
+                    <p className="text-3xl font-bold mb-1">In Progress</p>
+                    <p className="text-sm text-emerald-200">Clearing & Development</p>
+                  </div>
+                  <div>
+                    <p className="text-3xl font-bold mb-1">2026</p>
+                    <p className="text-sm text-emerald-200">Foundation Year</p>
+                  </div>
                 </div>
-              </motion.div>
+              </div>
 
               <div className="mt-16 grid md:grid-cols-4 gap-8">
                 {[
@@ -910,7 +944,27 @@ export default function App() {
                   </p>
                 </motion.div>
               </div>
-              
+
+              {/* Finance Vision Image */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="mb-16 rounded-3xl overflow-hidden shadow-xl border border-gray-100"
+              >
+                <div className="bg-gradient-to-r from-emerald-900 to-green-900 px-8 py-5 text-white">
+                  <p className="text-xs font-bold tracking-[0.3em] uppercase text-emerald-300 mb-1">Budget Breakdown</p>
+                  <h4 className="text-xl font-bold">Project Finance Vision</h4>
+                  <p className="text-sm text-emerald-200 mt-1">How your contributions are allocated — e.g. KES 251,940 to secure the land and provide controlled access</p>
+                </div>
+                <img
+                  src="/Project finance vision.jpeg"
+                  alt="Project Finance Vision — budget breakdown showing how funds are allocated"
+                  className="w-full object-contain bg-white"
+                />
+              </motion.div>
+
               <div className="grid md:grid-cols-3 gap-8">
                 {[
                   {
